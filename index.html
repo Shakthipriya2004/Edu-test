@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Questions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h1 style="color: rgb(0, 238, 255);"> 🕮 EDUTest</h1>
+    <button class="side1" >ADD QUESTION</button>
+    <hr>
+    <ul class="side2">
+    <div ><b>SECTIONS</b></div>
+    <div>➕ New Section</div>
+    <div style="color: pink;">● Section 1</div>
+    <div style="color: lightgreen">● Section 2</div>
+    <div>Uncategorized (5)</div>
+    </ul>
+    <hr>
+    <ul class="side3">
+    <div><b>TEST INFO</b></div>
+    <div>Marks: (10)</div>
+    <div>No. of Q: (10)</div>
+    <div>Neg: (10)</div>
+    <div>Duration: (10)</div>
+    </div>
+    </ul>
+
+  <div class="main">
+    <div class="topbar">
+      <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#test" id="testactive">Tests</a>
+        <a href="#questionbank">Question Banks</a>
+        <a href="#classes">Classes</a>
+        <a href="#teachers">Teachers</a>
+      </nav>
+      <div ><strong>A</strong> Admin</div>
+    </div>
+
+    <div class="content">
+      <h2>Test Questions</h2>
+
+      <div class="header-bar">
+        <input type="text" class="search-bar" placeholder="Search..." oninput="filterQuestions(this.value)">
+        <div class="view-buttons">
+          <button id="fullBtn" onclick="setViewMode('full')">Full View</button>
+          <button id="viewBtn" onclick="setViewMode('question')">View</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label><input type="checkbox" id="selectAll" onchange="selectAllQuestions(this)"> Select All</label>
+      </div>
+
+      <div id="questionContainer"></div>
+    </div>
+<div id="questionContainer"></div>
+
+<div class="load-buttons">
+  <button id="loadToggleBtn" onclick="toggleLoad()" >
+    Load More
+  </button>
+</div>
+<div id="questionContainer"></div>
+<div id="loadContainer"></div>
+  </div>
+
+  <script src="test.js"></script>
+
+</body>
+</html>

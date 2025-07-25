@@ -2,54 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Test Questions</title>
+  <title>EDUTest</title>
+  <link rel="icon" href="https://img.icons8.com/?size=100&id=GSRBDg1Wm6Dn&format=png&color=000000" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="test.css">
 </head>
 <body>
-
-  <div class="sidebar">
-    <h1 style="color: rgb(0, 238, 255);"> 🕮 EDUTest</h1>
-    <button class="side1" >ADD QUESTION</button>
-    <hr>
-    <ul class="side2">
-    <div ><b>SECTIONS</b></div>
-    <div>➕ New Section</div>
-    <div style="color: pink;">● Section 1</div>
-    <div style="color: lightgreen">● Section 2</div>
-    <div>Uncategorized (5)</div>
-    </ul>
-    <hr>
-    <ul class="side3">
-    <div><b>TEST INFO</b></div>
-    <div>Marks: (10)</div>
-    <div>No. of Q: (10)</div>
-    <div>Neg: (10)</div>
-    <div>Duration: (10)</div>
-    </div>
-    </ul>
-
-  <div class="main">
-    <div class="topbar">
-      <nav>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#test" id="testactive">Tests</a>
-        <a href="#questionbank">Question Banks</a>
-        <a href="#classes">Classes</a>
-        <a href="#teachers">Teachers</a>
-      </nav>
-      <div ><strong>A</strong> Admin</div>
+  <header class="header">
+    <div class="left-section">
+      <button class="sidebar-toggle">&#9776;</button>
+      <img src=" https://img.icons8.com/?size=100&id=GSRBDg1Wm6Dn&format=png&color=000000" alt="Logo" class="logo">
     </div>
 
+    <nav class="nav-menu" id="navMenu">
+      <a href="#Dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="#Tests" class="active"><i class="fas fa-file-alt"></i> Tests</a>
+      <a href="#QuestionBanks"><i class="fas fa-book"></i> Question Banks</a>
+      <a href="#Classes"><i class="fas fa-users"></i> Classes</a>
+      <a href="#Teachers"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+    </nav>
+
+    <div class="right-section">
+      <div class="profile-circle">A</div>
+      <span class="admin-name">Admin</span>
+      <button class="nav-toggle" id="navToggle">&#9776;</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <button class="add-btn" onclick="addQuestion()">+ ADD QUESTION</button>
+      <hr>
+      <div class="sidebar-section">
+        <h4>SNAPSHOT</h4>
+        &nbsp;
+        <div><b>SECTIONS</b></div>
+        <div class="sidebar-link">➕ New Section</div>
+        <div class="sidebar-link"><span class="dot dot1"></span> Section 1</div>
+        <div class="sidebar-link"><span class="dot dot2"></span> Section 2</div>
+        <div class="sidebar-link">Uncategorized (5)</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div><b>TEST INFORMATION</b></div>
+        <div class="sidebar-link"><input type="radio"> Marks: (10)</div>
+        <div class="sidebar-link"><input type="radio"> No. of Q: (10)</div>
+        <div class="sidebar-link"><input type="radio"> Neg: (10)</div>
+        <div class="sidebar-link"><input type="radio"> Duration: (10)</div>
+      </div>
+    </div>
+
+    
     <div class="content">
-      <h2>Test Questions</h2>
-
+      <h1>Test Questions</h1>
       <div class="header-bar">
         <input type="text" class="search-bar" placeholder="Search..." oninput="filterQuestions(this.value)">
         <div class="view-buttons">
           <button id="fullBtn" onclick="setViewMode('full')">Full View</button>
-          <button id="viewBtn" onclick="setViewMode('question')">View</button>
-        </div>
+         <span class="dropdown"><button id="viewBtn" onclick="setViewMode('question') , toggleDropdown()" class="dropbtn">View</button>
+           <span id="dropdownContent" class="dropdown-content">
+            
+            <label><input type="checkbox" value="Question">Questions</label>
+            <label><input type="checkbox" value="Owner">Owner</label>
+            <label><input type="checkbox" value="Marks"> Marks</label>
+            <label><input type="checkbox" value="Type"> Type</label>
+            <label><input type="checkbox" value="Actions"> Actions</label>
+            <button onclick="applySelections()">Apply</button>
+           </span>
+          </span>
+        </div> 
       </div>
 
       <div class="controls">
@@ -57,19 +79,13 @@
       </div>
 
       <div id="questionContainer"></div>
+
+      <div class="load-buttons">
+        <button id="loadToggleBtn" onclick="toggleLoad()">Load More</button>
+      </div>
     </div>
-<div id="questionContainer"></div>
-
-<div class="load-buttons">
-  <button id="loadToggleBtn" onclick="toggleLoad()" >
-    Load More
-  </button>
-</div>
-<div id="questionContainer"></div>
-<div id="loadContainer"></div>
   </div>
-
+  
   <script src="test.js"></script>
-
 </body>
 </html>
